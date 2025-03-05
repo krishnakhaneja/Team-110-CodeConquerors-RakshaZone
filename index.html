@@ -3,185 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Raksha Zone: Empowering women's safety with real-time tools and resources.">
-    <title>Raksha Zone - Women's Safety</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="A platform for women's safety and security with emergency tools and resources.">
+    <title>Women's Safety & Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="animate-slide-down">
+    <header>
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-shield-alt"></i>
-                <h1>Raksha Zone</h1>
-            </div>
+            <h1><i class="fas fa-shield-alt"></i> Raksha Zone</h1>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#sos">SOS</a></li>
-                    <li><a href="#tips">Tutorials</a></li>
+                    <li><a href="#tips">Tips</a></li>
+                    <li><a href="#helplines">Laws</a></li>
                     <li><a href="#helplines">Helplines</a></li>
-                    <li><a href="#map">Safe Routes</a></li>
-                    <li><a href="#community">Community</a></li>
                     <li><a href="#ngo">NGOs</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Login</a></li>
                 </ul>
             </nav>
-            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
         </div>
     </header>
 
-    <!-- Panic Button -->
-    <button id="panicBtn" class="panic-btn glass-effect" aria-label="Panic Button">
-        <i class="fas fa-exclamation-triangle"></i> Panic
-    </button>
+    <button id="panicBtn" class="panic-btn" aria-label="Panic Button"><i class="fas fa-exclamation-triangle"></i> Panic</button>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero animate-fade-in">
+    <section id="home" class="hero">
         <div class="container">
-            <h2>Empower Your Safety</h2>
-            <p>Real-time tools and resources for women's security.</p>
-            <button id="liveLocationBtn" class="btn primary-btn glass-effect">Share Live Location</button>
+            <h2>Your Safety, Our Mission</h2>
+            <p>Empowering women with real-time tools and resources.</p>
+            <button id="liveLocationBtn" class="btn">Share Live Location</button>
         </div>
     </section>
 
-    <!-- SOS Section -->
-    <section id="sos" class="section animate-slide-up">
-        <div class="container glass-container">
-            <h2>Emergency SOS</h2>
-            <div class="sos-container">
-                <input type="tel" id="sosNumber" placeholder="Emergency Contact (e.g., +1234567890)" class="input-field glass-effect">
-                <button id="sosBtn" class="sos-btn glass-effect">Send SOS</button>
-                <p id="sosStatus" class="status-text">Alert will include your live location.</p>
+    <section id="tips" class="container">
+        <h2>Self-Defense Tutorials</h2>
+        <div class="slider-container">
+            <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <div class="tips-slider" id="tipsSlider">
+                <div class="tip-card">
+                    <i class="fas fa-fist-raised"></i>
+                    <h3>Basic Punch</h3>
+                    <p>Keep your thumb outside your fist, aim for soft targets.</p>
+                    <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Video</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-shoe-prints"></i>
+                    <h3>Escape Hold</h3>
+                    <p>Twist and pull to break free from a wrist grab.</p>
+                    <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Video</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Use Your Voice</h3>
+                    <p>Shout loudly to deter attackers.</p>
+                    <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Video</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-hand-paper"></i>
+                    <h3>Palm Strike</h3>
+                    <p>Use the heel of your hand to strike upward.</p>
+                    <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Video</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-running"></i>
+                    <h3>Quick Escape</h3>
+                    <p>Run to a crowded area if possible.</p>
+                    <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Video</a>
+                </div>
+            </div>
+            <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section id="helplines" class="container">
+        <h2>Helpline Directory</h2>
+        <input type="text" id="helplineSearch" placeholder="Search by region or name..." class="search-input">
+        <div id="helplineList" class="helpline-list">
+            <div class="helpline-item" data-region="usa">
+                <h3>National Domestic Violence Hotline (USA)</h3>
+                <p><a href="tel:+18007997233" class="dial-link">1-800-799-7233</a></p>
+            </div>
+            <div class="helpline-item" data-region="india">
+                <h3>Women Helpline (India)</h3>
+                <p><a href="tel:1091" class="dial-link">1091</a></p>
+            </div>
+            <div class="helpline-item" data-region="uk">
+                <h3>National Domestic Abuse Helpline (UK)</h3>
+                <p><a href="tel:+448082000247" class="dial-link">+44 808 2000 247</a></p>
             </div>
         </div>
     </section>
 
-    <!-- Self-Defense Tutorials -->
-    <section id="tips" class="section animate-slide-up">
+    <section id="ngo" class="container">
+        <h2>NGO Partnerships</h2>
+        <div class="ngo-grid">
+            <div class="ngo-card">
+                <h3>Women's Aid</h3>
+                <p>Supporting survivors of domestic abuse.</p>
+                <a href="https://www.womensaid.org.uk" target="_blank" class="ngo-link">Visit Site</a>
+                <a href="#" class="ngo-link donate">Donate</a>
+            </div>
+            <div class="ngo-card">
+                <h3>UN Women</h3>
+                <p>Advancing gender equality worldwide.</p>
+                <a href="https://www.unwomen.org" target="_blank" class="ngo-link">Visit Site</a>
+                <a href="#" class="ngo-link donate">Volunteer</a>
+            </div>
+            <div class="ngo-card">
+                <h3>Safe Horizon</h3>
+                <p>Assisting victims of violence.</p>
+                <a href="https://www.safehorizon.org" target="_blank" class="ngo-link">Visit Site</a>
+                <a href="#" class="ngo-link donate">Support</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" placeholder="Your Email" required aria-label="Your Email">
+            <textarea placeholder="Your Message" required aria-label="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
         <div class="container">
-            <h2>Self-Defense Tutorials</h2>
-            <div class="slider-container">
-                <button class="slider-btn prev glass-effect" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                <div class="tips-slider" id="tipsSlider">
-                    <div class="tip-card glass-effect">
-                        <i class="fas fa-fist-raised"></i>
-                        <h3>Basic Punch</h3>
-                        <p>Aim for soft targets with a firm fist.</p>
-                        <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Now</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Raksha Zone</h3>
+                    <p>Your trusted platform for women's safety.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact with us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="tip-card glass-effect">
-                        <i class="fas fa-shoe-prints"></i>
-                        <h3>Escape Hold</h3>
-                        <p>Twist to break free from a grip.</p>
-                        <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Now</a>
-                    </div>
-                    <div class="tip-card glass-effect">
-                        <i class="fas fa-volume-up"></i>
-                        <h3>Use Your Voice</h3>
-                        <p>Shout to deter attackers.</p>
-                        <a href="#" class="tutorial-link" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Now</a>
-                    </div>
-                </div>
-                <button class="slider-btn next glass-effect" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Helplines -->
-    <section id="helplines" class="section alt-bg animate-slide-up">
-        <div class="container glass-container">
-            <h2>Helpline Directory</h2>
-            <input type="text" id="helplineSearch" placeholder="Search by region..." class="input-field glass-effect search-input">
-            <div id="helplineList" class="helpline-list">
-                <div class="helpline-item glass-effect" data-region="india">
-                    <h3>Women Helpline (India)</h3>
-                    <p><a href="tel:1091" class="dial-link">1091</a></p>
-                </div>
-                <div class="helpline-item glass-effect" data-region="usa">
-                    <h3>National Domestic Violence Hotline (USA)</h3>
-                    <p><a href="tel:+18007997233" class="dial-link">1-800-799-7233</a></p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Safe Route Mapping -->
-    <section id="map" class="section animate-slide-up">
-        <div class="container glass-container">
-            <h2>Safe Route Mapping</h2>
-            <div class="map-form">
-                <input type="text" id="startPoint" placeholder="Starting Point" class="input-field glass-effect">
-                <input type="text" id="endPoint" placeholder="Destination" class="input-field glass-effect">
-                <button id="routeBtn" class="btn secondary-btn glass-effect">Find Route</button>
-            </div>
-            <div id="mapContainer" class="glass-effect"></div>
-        </div>
-    </section>
-
-    <!-- Community Alerts -->
-    <section id="community" class="section alt-bg animate-slide-up">
-        <div class="container glass-container">
-            <h2>Community Alerts</h2>
-            <form id="alertForm" class="alert-form">
-                <textarea id="alertMessage" placeholder="Report an incident..." required class="input-field textarea glass-effect"></textarea>
-                <button type="submit" class="btn primary-btn glass-effect">Submit Alert</button>
-            </form>
-            <div id="alertList" class="alert-list"></div>
-        </div>
-    </section>
-
-    <!-- NGO Partnerships -->
-    <section id="ngo" class="section animate-slide-up">
-        <div class="container">
-            <h2>NGO Partnerships</h2>
-            <div class="ngo-grid">
-                <div class="ngo-card glass-effect">
-                    <h3>Women's Aid</h3>
-                    <p>Support for domestic abuse survivors.</p>
-                    <a href="https://www.womensaid.org.uk" target="_blank" class="ngo-link">Visit</a>
-                    <a href="#" class="ngo-link donate">Donate</a>
+            <div class="footer-info">
+                <div class="footer-contacts">
+                    <p><span class="flag">🇮🇳</span> India: <a href="tel:+9197990911149">+91 97990911149</a></p>
+                    <p><span class="flag">✉️</span> Email: <a href="mailto:info@rakshazone.org">info@rakshazone.org</a></p>
                 </div>
-                <div class="ngo-card glass-effect">
-                    <h3>UN Women</h3>
-                    <p>Advancing gender equality globally.</p>
-                    <a href="https://www.unwomen.org" target="_blank" class="ngo-link">Visit</a>
-                    <a href="#" class="ngo-link donate">Volunteer</a>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Disclaimer Policy</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section alt-bg animate-slide-up">
-        <div class="container glass-container">
-            <h2>Contact Us</h2>
-            <form id="contactForm" class="contact-form">
-                <input type="text" placeholder="Name" required class="input-field glass-effect" aria-label="Name">
-                <input type="email" placeholder="Email" required class="input-field glass-effect" aria-label="Email">
-                <textarea placeholder="Message" required class="input-field textarea glass-effect" aria-label="Message"></textarea>
-                <button type="submit" class="btn primary-btn glass-effect">Send</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="animate-slide-up">
-        <div class="container">
-            <p>© 2025 Raksha Zone. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="footer-copyright">
+                <p>Copyright © 2025 Raksha Zone App. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
